@@ -24,22 +24,21 @@ workflows:
           region: AWS_DEFAULT_REGION
           repo: $AWS_ACCOUNT_ECR_NAME
           skip-when-tags-exist: false
-          tag: main-$CIRCLE_SHA1
+          tag: dev-$CIRCLE_SHA1
           filters:
             branches:
               only:
                 - main
-#      - aws-ecs/deploy-service-update:
-#          context:
-#            - TAIGAN_CONTEXT
-#          cluster: taigan-backend-dev
-#          container-image-name-updates: 'container=taiganbackenddevcontainer,tag=${CIRCLE_SHA1}'
-#          family: taigan-backend-dev
-#          service-name: taiganbackenddevservice1
-#          force-new-deployment: true
-#          filters:
-#            branches:
-#              only:
-#                - master
-#          requires:
-#
+      - aws-ecs/deploy-service-update:
+          context:
+            - KAIRAT_CONTEXT
+          cluster: test-cluster
+          container-image-name-updates: 'container=test-container2,tag=dev-${CIRCLE_SHA1}'
+          family: test-task2
+          service-name: test-service
+          force-new-deployment: true
+          filters:
+            branches:
+              only:
+                - main
+          requires:
