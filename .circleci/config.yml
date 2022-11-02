@@ -32,10 +32,10 @@ workflows:
       - aws-ecs/deploy-service-update:
           context:
             - KAIRAT_CONTEXT
-          cluster: $DEV_CLUSTER_NAME
-          container-image-name-updates: 'container=${DEV_CONTAINER_NAME},tag=dev-${CIRCLE_SHA1}'
-          family: $DEV_TASK_NAME
-          service-name: $DEV_SERVICE_NAME
+          cluster: test-cluster
+          container-image-name-updates: 'container=test-container2,tag=dev-${CIRCLE_SHA1}'
+          family: test-task2
+          service-name: test-service
           force-new-deployment: true
           filters:
             branches:
