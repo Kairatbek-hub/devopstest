@@ -32,9 +32,8 @@ public class DemoApplication {
 	public String greeting(){
 		return String.format("""
 							<p> Hello world!</p>
-							<p>Hii</p>
-							<img src = https://orangematter.solarwinds.com/wp-content/uploads/2022/03/DevOps-lifecycle-capabilities-1024x621.png>
-				    			<p>%s ->(from code) hello</p>
+							<img src = https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/WOPA160517_D056-resized.jpg?crop=864%2C0%2C1728%2C2304&wid=600&hei=800&scl=2.88>
+				   			<p>%s ->(from code) hello</p>
 				                <p>%s ->(from code) database</p>
 				                <p>%s ->(from code) awsaccesskey</p>
 				                <p>%s ->(from code) awssecretkey</p>
